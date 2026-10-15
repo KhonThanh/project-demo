@@ -1155,94 +1155,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initToggleSystem([
       {
-        trigger: ".menu-toggle__button",
-        target: ".menu-navigation__content",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-        closeOnEsc: true,
-        innerSelector: ".m-menu__link"
-      },
-      {
-        trigger: ".filter-toggle__button",
-        target: ".product-filter",
-        closeBtn: ".col-sidebar-close__btn",
-        innerSelector: ".product-filter",
+        trigger: ".menu-bar__container",
+        target: ".header-menuMB__container",
         behavior: "toggle",
         activeClass: "active",
         closeOnOutside: true,
         closeOnEsc: true,
       },
-      {
-        trigger: ".product-card__btn",
-        target: ".contact-modal-overlay",
-        closeBtn: ".contact-modal-close",
-        innerSelector: ".contact-modal-card",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-        overlayCloses: true,
-        closeOnEsc: true
-      },
-       {
-        trigger: ".btn-contact",
-        target: ".contact-modal-overlay",
-        closeBtn: ".contact-modal-close",
-        innerSelector: ".contact-modal-card",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-        overlayCloses: true,
-        closeOnEsc: true
-      },
-      {
-        trigger: ".news-detail-sidebar__product-actions .news-detail__contact",
-        target: ".contact-modal-overlay",
-        closeBtn: ".contact-modal-close",
-        innerSelector: ".contact-modal-card",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-        overlayCloses: true,
-        closeOnEsc: true
-      },
-      {
-        trigger: ".contact-modal-card__btn",
-        target: ".contact-modal-overlay",
-        closeBtn: ".popup-success__icon-close",
-        behavior: "toggle",
-        activeClass: "success",
-        closeOnOutside: true,
-        overlayCloses: true,
-        closeOnEsc: true
-      },
-      {
-        trigger: ".pagination .btn-page",
-        behavior: "activate",
-        activeClass: "active",
-      },
-
-      {
-        trigger: ".filter-tag",
-        behavior: "activate",
-        activeClass: "active",
-      },
-
-      {
-        trigger: ".news-detail-header__action-btn",
-        target: ".news-detail-header__action-container",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-         closeOnEsc: true
-      },
-
-      {
-        trigger: ".product-tabs-section .tab-btn",
-        target: ".product-tabs-section .tab-content",
-        activeClass: "active",
-        behavior: "activate" 
-      }
 
     ]);
 

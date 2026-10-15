@@ -9,8 +9,6 @@ export default function Home() {
       <main>
         <p>hello world</p>
       </main>
-
-      <Script src="/js/frontend.js" strategy="afterInteractive" />
     </>
   );
 }

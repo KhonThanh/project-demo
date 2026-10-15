@@ -1,0 +1,22 @@
+/* ========================================== */
+/* 1. header                                   */
+/* ========================================= */
+.header-menuMB__container {
+  display: flex; 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%); 
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); 
+  pointer-events: none; 
+}
+
+.header-menuMB__container.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0); 
+  pointer-events: auto; 
+}
+
+.menu-bar__container{
+    display: none;
+}

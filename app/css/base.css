@@ -1,0 +1,217 @@
+/* ========================================== */
+/* 1. VIỀN & HIỆU ỨNG (BORDERS & EFFECTS)     */
+/* ========================================= */
+
+body {
+  font-family: 'BeVietnamPro', sans-serif;
+  background-color: var(--white-color);
+}
+
+:root {
+  --white-color: #FDF9F4;
+  --second-white-color: #F7F3EE;
+  --third-white-color: #F1EDE8;
+  --primary-color: #994703;
+  --secondary-color: #F8E0CF;
+  --third-color: #91E9B1;
+  --black-color: #2C1810;
+  --gap: 24px;
+  --font-size-base: 16px;
+  --font-roboto: 'Roboto', Arial, sans-serif;
+  --font-be-vn: 'BeVietnamPro', sans-serif;
+}
+
+/* ========================================== */
+/* 2. HỆ THỐNG LƯỚI (GRID SYSTEM)             */
+/* ========================================== */
+.col-1 { width: 100%; }
+.col-section-2, .col-2 { width: calc((100% - var(--gap)) / 2); }
+.col-3 { width: calc((100% - (var(--gap) * 2)) / 3); }
+.col-4 { width: calc((100% - (var(--gap) * 3)) / 4); }
+.col-5 { width: calc((100% - (var(--gap) * 4)) / 5); }
+.col-6 { width: calc((100% - (var(--gap) * 5)) / 6); }
+.col-20 { width: calc(20% - (var(--gap) * 0.2)); }
+.col-80 { width: calc(80% - (var(--gap) * 0.8)); }
+
+.col-30 { width: calc(30% - (var(--gap) * 0.3)); }
+.col-70 { width: calc(70% - (var(--gap) * 0.7)); }
+
+.col-40 { width: calc(40% - (var(--gap) * 0.4)); }
+.col-50 { width: calc(50% - (var(--gap) * 0.5)); }
+.col-60 { width: calc(60% - (var(--gap) * 0.6)); }
+
+@media (max-width: 1200px) { 
+    .col-6 { width: calc((100% - (var(--gap) * 4)) / 5); }
+}
+@media (max-width: 1024px) { 
+    .col-4, .col-5, .col-6 { width: calc((100% - (var(--gap) * 2)) / 3); } 
+    .col-section-2 {width: 100%}
+}
+
+@media (max-width: 800px) {
+  .col-50,
+  .col-20, .col-30, .col-40, 
+  .col-60, .col-70, .col-80{
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+    .col-3, .col-4, .col-5 {width: calc((100% - var(--gap)) / 2);}  
+}
+
+@media (max-width: 600px) {
+    .col-6 {width: calc((100% - (var(--gap))) / 2);}
+    .col-2, .col-3, .col-4, .col-5 {width: 100%;}
+}
+
+@media (max-width: 480px) {
+    .col-2, .col-3, .col-4, .col-5 { width: 100%;}
+}
+
+/* ========================================== */
+/* 3. VIỀN & HIỆU ỨNG (BORDERS & EFFECTS)     */
+/* ========================================= */
+.hover-border-primary { 
+    background-clip: padding-box; -webkit-mask-image: -webkit-radial-gradient(white, black);
+    backface-visibility: hidden; transform: translateZ(0); 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    will-change: transform, box-shadow, border-color; 
+}
+.hover-border-primary:hover {
+    border-color: var(--primary-color) !important; transform: translateY(-3px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12); 
+}
+.hover-border-primary .img-content { filter: grayscale(20%) brightness(0.85); transition: all 0.5s ease;}
+.hover-border-primary:hover .img-content {filter: grayscale(0%) brightness(1.05); transform: scale(1.08); }
+.hover-border-primary::before { 
+    content: ""; position: absolute; top: 0; left: -100%;  width: 60%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); z-index: 5; pointer-events: none; 
+}
+.hover-border-primary:hover::before { animation: shine-sweep 0.75s ease-in-out forwards;}
+
+@keyframes shine-sweep {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* ========================================== */
+/* 4. VIỀN & HIỆU ỨNG XUẤT HIỆN (BORDERS & EFFECTS)     */
+/* ========================================= */
+
+section.hidden-section {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+
+section.hidden-section>div>div {
+    opacity: 0;
+    filter: blur(6px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+section.hidden-section>div>div:nth-child(1) {
+    transform: translateY(-40px) scale(0.95);
+}
+
+section.hidden-section>div>div:nth-child(2) {
+    transform: translateY(60px);
+    transition-delay: 0.15s;
+}
+
+section.hidden-section>div>div:nth-child(n+3) {
+    transform: translateX(-50px);
+    transition-delay: 0.3s;
+}
+
+section.hidden-section.show-up>div>div {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    filter: blur(0);
+}
+
+
+footer.hidden-section {
+    opacity: 0;
+    transform: translateY(100px) rotateX(-20deg);
+    transform-origin: top center;
+    filter: blur(20px);
+    transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity, filter;
+}
+
+footer.hidden-section.show-up {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    filter: blur(0);
+}
+
+/* ========================================== */
+/* 5. FONT                                   */
+/* ========================================= */
+
+/* 100 - Thin */
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro Thin'), local('BeVietnamPro-Thin'),
+         url('/font/BeVietnamPro-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 200 - ExtraLight */
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro ExtraLight'), local('BeVietnamPro-ExtraLight'),
+         url('/font/BeVietnamPro-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro Regular'), local('BeVietnamPro-Regular'),
+         url('/font/BeVietnamPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 500 - Medium */
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro Medium'), local('BeVietnamPro-Medium'),
+         url('/font/BeVietnamPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 800 - ExtraBold */
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro ExtraBold'), local('BeVietnamPro-ExtraBold'),
+         url('/font/BeVietnamPro-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 900 - Black */
+@font-face {
+    font-family: 'BeVietnamPro';
+    src: local('BeVietnamPro Black'), local('BeVietnamPro-Black'),
+         url('/font/BeVietnamPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
