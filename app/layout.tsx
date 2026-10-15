@@ -12,6 +12,17 @@ const beVietnamPro = Be_Vietnam_Pro({
   display: "swap",
 });
 
+export const metadata = {
+  title: "Tên Website Của Bồ",
+  description: "Mô tả website",
+  icons: {
+    icon: [
+      { url: "/img/favicon/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" },
+      { url: "/img/favicon/favicon-32x32.svg", sizes: "32x32", type: "image/svg+xml" },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
