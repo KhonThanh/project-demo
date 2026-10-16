@@ -5,6 +5,7 @@
 body {
   font-family: 'BeVietnamPro', sans-serif;
   background-color: var(--white-color);
+  color: var(--black-color);
 }
 
 :root {
@@ -19,6 +20,11 @@ body {
   --font-size-base: 16px;
   --font-roboto: 'Roboto', Arial, sans-serif;
   --font-be-vn: 'BeVietnamPro', sans-serif;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
 }
 
 /* ========================================== */

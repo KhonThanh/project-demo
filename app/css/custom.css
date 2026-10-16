@@ -30,14 +30,6 @@
   font-size: 18px;
 }
 
-.footer-container__content h2,
-.footer-container__content span,
-.footer-container__content b,
-.footer-container__content a,
-.footer-container__content p{
-  color: var(--black-color);
-}
-
 .footer-slogan p{
   color: var(--primary-color);
 }
@@ -46,3 +38,7 @@
 .footer-container__content p{
   font-size: 14px;
 }
+
+/* ========================================== */
+/* 3. homepage                                   */
+/* ========================================= */

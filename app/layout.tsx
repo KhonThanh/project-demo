@@ -30,7 +30,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" className={beVietnamPro.className}>
-      <body>{children}
+      <body>
+        {children}
         <script src="/js/frontend.js" defer></script>
       </body>
     </html>

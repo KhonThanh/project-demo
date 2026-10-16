@@ -982,148 +982,147 @@ function auditDOMIntegrity() {
 
 // ----------- Vùng gọi biến --------------
 document.addEventListener("DOMContentLoaded", () => {
-    // 2. SLIDER 3 CỘT (Dự án, Bình luận, Dịch vụ)
-    initSwiperSlider({
-      mainSelector: '.js-slider-3cols',
-      wrapperSelector: '.js-slider-wrapper',
-      loop: true,
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: { slidesPerView: 1, spaceBetween: 10 },
-        768: { slidesPerView: 2, spaceBetween: 15 },
-        1024: { slidesPerView: 3, spaceBetween: 20 },
-      },
-    });
-
-    // 3. SLIDER 4 CỘT (Tin tức, Sản phẩm, Video)
-    initSwiperSlider({
-      mainSelector: '.js-slider-4cols',
-      wrapperSelector: '.js-slider-wrapper',
-      loop: true,
-      autoplay: { delay: 3500, disableOnInteraction: false },
-      navigation: {
-        nextEl: '.video-dialogue__nav .swiper-button-next',
-        prevEl: '.video-dialogue__nav .swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 10 },
-        768: { slidesPerView: 3, spaceBetween: 15 },
-        1024: { slidesPerView: 4, spaceBetween: 20 },
-      },
-    });
-
-    // 4. SLIDER LOGO / THƯƠNG HIỆU (Chia 2 hàng thủ công)
-    initSwiperSlider({
-      mainSelector: '.js-slider-logo',
-      wrapperSelector: '.js-slider-wrapper',
-      loop: false,
-      autoGroupRows: 2,
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 15 },
-        768: { slidesPerView: 4, spaceBetween: 20 },
-        1024: { slidesPerView: 5, spaceBetween: 20 },
-      },
-    });
-
-    // 5. SLIDER GRID TO SLIDE (Tự động biến Grid thành Slide trên Mobile)
-    initSwiperSlider({
-      mainSelector: '.js-slider-grid-to-slide',
-      wrapperSelector: '.js-slider-wrapper',
-      loop: false,
-      autoplay: false,
-      navigation: {
-        nextEl: '.custom-next-btn',
-        prevEl: '.custom-prev-btn',
-      },
-      pagination: {
-        el: '.custom-dots',
-        clickable: true,
-      },
-      breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 10 },
-        768: { slidesPerView: 3, spaceBetween: 15 },
-        1024: { slidesPerView: 3, spaceBetween: 20 },
-      },
-    });
-
-    const galleryThumbSwiper = initSwiperSlider({
-      mainSelector: '.js-gallery-thumb',
-      wrapperSelector: '.js-slider-wrapper',
-      slidesPerView: 4,
-      spaceBetween: 10,
-      isThumb: true,
-      watchSlidesProgress: true, 
-      slideThumbActiveClass: 'swiper-slide-thumb-active',
-      breakpoints: {
-        320: { slidesPerView: 4, spaceBetween: 8 },
-        768: { slidesPerView: 4, spaceBetween: 12 }
-      }
-    });
-
-    initSwiperSlider({
-      mainSelector: '.js-gallery-main',
-      wrapperSelector: '.js-slider-wrapper',
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: false,
-      autoplay: false,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      thumbs: {
-        swiper: Array.isArray(galleryThumbSwiper) ? galleryThumbSwiper[0] : galleryThumbSwiper
-      }
-    });
-
-    initToggleSystem([
-      {
-        trigger: ".menu-bar__container",
-        target: ".header-menuMB__container",
-        behavior: "toggle",
-        activeClass: "active",
-        closeOnOutside: true,
-        closeOnEsc: true,
-      },
-
-    ]);
-
-    // 🟡 roll to the top
-    watchScrollTrigger({
-      target: '.btntotop__container',
-      triggerPx: 1200,
-      offTriggerPx: 1000,
-      scrollTo: 0,
-    });
-    // ✨ 4️⃣ HIỆU ỨNG ẢNH & REVEAL
-    applyImageEnhancements();
-    initRevealEffect();
-    initFormValidation();
-    initUniversalActiveMenu('.menu-bottom__nav, .menu-navigation__content', 'active');
-    initStarRating('.popup-comment__content .rate-stars', '.star', 'active');
-    // disableGlobalCopy();
+  // 2. SLIDER 3 CỘT (Dự án, Bình luận, Dịch vụ)
+  initSwiperSlider({
+    mainSelector: '.js-slider-3cols',
+    wrapperSelector: '.js-slider-wrapper',
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1, spaceBetween: 10 },
+      768: { slidesPerView: 2, spaceBetween: 15 },
+      1024: { slidesPerView: 3, spaceBetween: 20 },
+    },
   });
+
+  // 3. SLIDER 4 CỘT (Tin tức, Sản phẩm, Video)
+  initSwiperSlider({
+    mainSelector: '.js-slider-4cols',
+    wrapperSelector: '.js-slider-wrapper',
+    loop: true,
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    navigation: {
+      nextEl: '.video-dialogue__nav .swiper-button-next',
+      prevEl: '.video-dialogue__nav .swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 2, spaceBetween: 10 },
+      768: { slidesPerView: 3, spaceBetween: 15 },
+      1024: { slidesPerView: 4, spaceBetween: 20 },
+    },
+  });
+
+  // 4. SLIDER LOGO / THƯƠNG HIỆU (Chia 2 hàng thủ công)
+  initSwiperSlider({
+    mainSelector: '.js-slider-logo',
+    wrapperSelector: '.js-slider-wrapper',
+    loop: false,
+    autoGroupRows: 2,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 2, spaceBetween: 15 },
+      768: { slidesPerView: 4, spaceBetween: 20 },
+      1024: { slidesPerView: 5, spaceBetween: 20 },
+    },
+  });
+
+  // 5. SLIDER GRID TO SLIDE (Tự động biến Grid thành Slide trên Mobile)
+  initSwiperSlider({
+    mainSelector: '.js-slider-grid-to-slide',
+    wrapperSelector: '.js-slider-wrapper',
+    loop: false,
+    autoplay: false,
+    navigation: {
+      nextEl: '.custom-next-btn',
+      prevEl: '.custom-prev-btn',
+    },
+    pagination: {
+      el: '.custom-dots',
+      clickable: true,
+    },
+    breakpoints: {
+      320: { slidesPerView: 2, spaceBetween: 10 },
+      768: { slidesPerView: 3, spaceBetween: 15 },
+      1024: { slidesPerView: 3, spaceBetween: 20 },
+    },
+  });
+
+  const galleryThumbSwiper = initSwiperSlider({
+    mainSelector: '.js-gallery-thumb',
+    wrapperSelector: '.js-slider-wrapper',
+    slidesPerView: 4,
+    spaceBetween: 10,
+    isThumb: true,
+    watchSlidesProgress: true,
+    slideThumbActiveClass: 'swiper-slide-thumb-active',
+    breakpoints: {
+      320: { slidesPerView: 4, spaceBetween: 8 },
+      768: { slidesPerView: 4, spaceBetween: 12 }
+    }
+  });
+
+  initSwiperSlider({
+    mainSelector: '.js-gallery-main',
+    wrapperSelector: '.js-slider-wrapper',
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: false,
+    autoplay: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: Array.isArray(galleryThumbSwiper) ? galleryThumbSwiper[0] : galleryThumbSwiper
+    }
+  });
+
+  initToggleSystem([
+    {
+      trigger: ".menu-bar__container",
+      target: ".header-menuMB__container",
+      behavior: "toggle",
+      activeClass: "active",
+      closeOnOutside: true,
+      closeOnEsc: true,
+    },
+
+  ]);
+
+  // 🟡 roll to the top
+  watchScrollTrigger({
+    target: '.btntotop__container',
+    triggerPx: 1200,
+    offTriggerPx: 1000,
+    scrollTo: 0,
+  });
+  // ✨ 4️⃣ HIỆU ỨNG ẢNH & REVEAL
+  applyImageEnhancements();
+  initRevealEffect();
+  initFormValidation();
+  initUniversalActiveMenu('.menu-bottom__nav, .menu-navigation__content', 'active');
+  initStarRating('.popup-comment__content .rate-stars', '.star', 'active');
+  // disableGlobalCopy();
 });
 
 // 🔁 Cập nhật khi include hoặc slick load lại

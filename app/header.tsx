@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <header className="flex justify-center sticky top-0 z-50 shadow bg-[var(--white-color)]">
+        <header className="flex relative justify-center z-10 sticky top-0 shadow bg-[var(--white-color)]">
             <div className="max-w-[1414px] py-2  w-[calc(100%-20px)] mx-auto flex flex-wrap gap-4 justify-between items-center">
                 <div className="aspect-[202/40] max-w-[202px] overflow-hidden relative">
                     <img src="/img/logo/logo-header.svg" alt="logo header" className="object-contain" />
