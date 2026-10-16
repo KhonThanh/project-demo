@@ -3,7 +3,7 @@ export default function Header() {
         <header className="flex justify-center sticky top-0 z-50 shadow bg-[var(--white-color)]">
             <div className="max-w-[1414px] py-2  w-[calc(100%-20px)] mx-auto flex flex-wrap gap-4 justify-between items-center">
                 <div className="aspect-[202/40] max-w-[202px] overflow-hidden relative">
-                    <img src="/img/logo/logo-header.svg" alt="" className="object-contain" />
+                    <img src="/img/logo/logo-header.svg" alt="logo header" className="object-contain" />
                     <a href="javascript:void()" className="inset-0 absolute" aria-label="trang chủ"></a>
                 </div>
                 <div className="flex gap-6 header-menu__container">

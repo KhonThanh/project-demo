@@ -1,41 +1,4 @@
 // ----------- Vùng chức năng -------------
-// 🧩 1️⃣ Include HTML Components
-function includeHTML(callback) {
-  const elements = document.querySelectorAll("[data-include]");
-  if (!elements.length) {
-    if (callback) callback();
-    return;
-  }
-
-  let loaded = 0;
-
-  Promise.all([...elements].map(async (el) => {
-    const file = el.getAttribute("data-include");
-    if (!file) return;
-
-    // Sử dụng versioning thay vì cache-busting bằng Date.now() để tận dụng cache trình duyệt
-    const version = "1.0.0"; // Thay đổi version này khi có cập nhật component
-    const cacheKey = `comp-${file}-${version}`;
-    let html = sessionStorage.getItem(cacheKey);
-
-    if (!html) {
-      // Xóa cache cũ của component này nếu có
-      Object.keys(sessionStorage).forEach(key => { if (key.startsWith(`comp-${file}`)) sessionStorage.removeItem(key); });
-      const res = await fetch(file, { cache: "reload" }); // Tải lại file mới nhất từ server
-      html = await res.text();
-      sessionStorage.setItem(cacheKey, html);
-    }
-
-    el.innerHTML = html;
-    if (typeof initResponsive === "function") initResponsive(el);
-
-    if (++loaded === elements.length) {
-      document.dispatchEvent(new Event("includesLoaded"));
-      if (callback) callback();
-    }
-  }));
-}
-
 // js thêm active
 function initToggleSystem(configs = []) {
   if (!window._toggleSystemState) {
@@ -1019,25 +982,6 @@ function auditDOMIntegrity() {
 
 // ----------- Vùng gọi biến --------------
 document.addEventListener("DOMContentLoaded", () => {
-  includeHTML(() => {
-    // 1. SLIDER BANNER (1 Cột - Hero LCP)
-    initSwiperSlider({
-      mainSelector: '.js-slider-banner',
-      wrapperSelector: '.js-slider-wrapper',
-      slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: false },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-
     // 2. SLIDER 3 CỘT (Dự án, Bình luận, Dịch vụ)
     initSwiperSlider({
       mainSelector: '.js-slider-3cols',

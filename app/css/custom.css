@@ -2,21 +2,47 @@
 /* 1. header                                   */
 /* ========================================= */
 .header-menuMB__container {
-  display: flex; 
+  display: flex;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(100%); 
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); 
-  pointer-events: none; 
+  transform: translateX(100%);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .header-menuMB__container.active {
   opacity: 1;
   visibility: visible;
-  transform: translateX(0); 
-  pointer-events: auto; 
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-.menu-bar__container{
-    display: none;
+.menu-bar__container {
+  display: none;
+}
+
+/* ========================================== */
+/* 2. footer                                   */
+/* ========================================= */
+.footer-container {}
+
+.footer-container__content h2{
+  font-size: 18px;
+}
+
+.footer-container__content h2,
+.footer-container__content span,
+.footer-container__content b,
+.footer-container__content a,
+.footer-container__content p{
+  color: var(--black-color);
+}
+
+.footer-slogan p{
+  color: var(--primary-color);
+}
+
+.footer-container__content a,
+.footer-container__content p{
+  font-size: 14px;
 }
