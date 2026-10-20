@@ -46,6 +46,25 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="bg-[var(--white-color)]">
+          <div className="news-container max-w-[1414px] w-[calc(100%-20px)] py-6 mx-auto flex flex-col gap-10">
+            <div className="news-container__title flex justify-between align-bottom">
+              <div className="news-title__header col-60 flex flex-col gap-3">
+                <span className="text-[var(--primary-color)] uppercase text-xs">BẢN ĐỒ NGUỒN CỘI TERROIR</span>
+                <h2 className="capitalize font-bold text-4xl">Ba Miền Thổ Nhưỡng, Ba Tầng Hương Vị Đặc Tuyển</h2>
+              </div>
+              <div className="news-title__dec col-40 h-fit">
+                <p>Mỗi vùng cao nguyên Việt Nam nắm giữ một bí mật khoáng chất và vi khí
+                  hậu độc nhất, định hình tính cách hương vị khác biệt trong từng mẻ rang.</p>
+              </div>
+            </div>
+            <div className="news-grid__container flex gap-6">
+              <div className="col-3 news-grid__item flex flex-col gap-4 py-3 px-3 bg-[var(--second-white-color)]">
+                
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

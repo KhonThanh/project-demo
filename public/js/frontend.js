@@ -1124,9 +1124,3 @@ document.addEventListener("DOMContentLoaded", () => {
   initStarRating('.popup-comment__content .rate-stars', '.star', 'active');
   // disableGlobalCopy();
 });
-
-// 🔁 Cập nhật khi include hoặc slick load lại
-document.addEventListener("includesLoaded", () => applyImageEnhancements());
-$(document).on("init reInit afterChange", ".slick-slider", function () {
-  applyImageEnhancements(this);
-});
