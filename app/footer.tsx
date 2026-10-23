@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="bg-[var(--third-white-color)] footer-container py-6 flex flex-col justify-center">
-            <div className="max-w-[1414px] w-[calc(100%-20px)] mx-auto  footer-container__content flex flex-wrap gap-4">
+            <div className="max-w-[1414px] w-[calc(100vw-20px)] mx-auto  footer-container__content flex flex-wrap gap-4">
                 <div className="col-4 flex flex-col gap-3 footer-container__item">
                     <div className="footer-logo aspect-[186/32] max-w-[186] overflow-hidden">
                         <img src="/img/logo/logo-footer.svg" alt="logo footer" className="object-contain" />
@@ -57,7 +57,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="max-w-[1414px] w-[calc(100%-20px)] mx-auto flex justify-between">
+            <div className="max-w-[1414px] w-[calc(100vw-20px)] mx-auto flex justify-between">
                 <div className="">
                     <p className="text-[14px]">© 2025 KAFÉ HYBRID Roastery Co. Bảo lưu mọi quyền.</p>
                 </div>

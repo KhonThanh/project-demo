@@ -1,7 +1,7 @@
 export default function Header() {
     return (
-        <header className="flex relative justify-center z-10 sticky top-0 shadow bg-[var(--white-color)]">
-            <div className="max-w-[1414px] py-2  w-[calc(100%-20px)] mx-auto flex flex-wrap gap-4 justify-between items-center">
+        <header className="flex relative justify-center z-10 sticky top-0 shadow bg-[var(--white-color)] overflow-hidden">
+            <div className="max-w-[1414px] py-2 relative w-[calc(100%-20px)] mx-auto flex flex-wrap gap-4 justify-between items-center">
                 <div className="aspect-[202/40] max-w-[202px] overflow-hidden relative">
                     <img src="/img/logo/logo-header.svg" alt="logo header" className="object-contain" />
                     <a href="#" className="inset-0 absolute" aria-label="trang chủ"></a>
@@ -32,6 +32,7 @@ export default function Header() {
                         <img src="/img/icon/bars.svg" alt="icon bar menu" />
                     </div>
                 </div>
+
                 <div className="gap-6 py-6 px-6 w-[80vw] max-w-[320px] text-right rounded-2xl shadow-lg header-menuMB__container flex-col top-full right-0 absolute bg-[var(--white-color)]">
                     <a href="#" className="py-2 border-b-mist-700 header-menuMB__item text-[var(--black-color)] text-[14px]" aria-label="trang chủ">Trang chủ</a>
                     <a href="#" className="py-2 border-b-mist-700 header-menuMB__item text-[var(--black-color)] text-[14px]" aria-label="Câu chuyện">Câu chuyện</a>

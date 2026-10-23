@@ -43,3 +43,44 @@ export const inforNews = [
         link: "#"
     }
 ];
+
+export const aboutData = {
+    banner: {
+        image: "/img/content/about.svg",
+        tag: "QUY TRÌNH SƠ CHẾ TỈ MỈ",
+        title: "Giữ Lại Trọn Vẹn Lớp Chất Nhầy Đường Tự Nhiên",
+        desc: "Giàn phơi cách đất tiêu chuẩn giúp hạt hấp thu nắng gió thảo nguyên từ 14 đến 21 ngày liên tục."
+    },
+
+    stats: [
+        {
+            tag: "ĐỘ NGỌT BRIX THU HOẠCH",
+            infor: "21° - 24° Brix",
+            desc: "Chỉ hái trái mọng đỏ sẫm đạt đỉnh đường"
+        },
+        {
+            tag: "KIỂM SOÁT LÊN MEN",
+            infor: "72h Yếm Khí",
+            desc: "Thùng kín kiểm soát van khí áp suất 1 chiều"
+        }
+    ],
+
+    heading: {
+        subTitle: "TRIẾT LÝ HỢP TÁC BỀN VŨNG",
+        mainTitle: "Tôn Trọng Sự Chậm Rãi Của Tự Nhiên & Đạo Đức Nông Nghiệp",
+        description: "Tại KAFÉ HYBRID, chúng tôi không mua hạt cà phê qua thương lái trung gian. Chúng tôi đồng hành cùng 18 hộ nông dân tiên phong tại Đơn Dương, Di Linh và Chư Păh, cam kết bao tiêu toàn bộ sản lượng hái chín chọn lọc tay 100%."
+    },
+
+    features: [
+        {
+            icon: "/img/icon/energy-leaf.svg",
+            title: "Canh Tác Dưới Tán Cây Che Bóng",
+            desc: "Trồng xen canh muồng đen và cây ăn quả giúp cân bằng hệ vi sinh thổ nhưỡng, giữ ẩm đất tự nhiên và hạn chế hoàn toàn thuốc bảo vệ thực vật hóa học."
+        },
+        {
+            icon: "/img/icon/energy-water.svg", 
+            title: "Sơ Chế Mật Ong (Honey) & Yếm Khí (Anaerobic)",
+            desc: "Tiết kiệm đến 90% lượng nước ngọt so với phương pháp ướt truyền thống. Quy trình lên men chậm giúp chiết xuất cấu trúc vị trái cây phong phú và độc bản."
+        }
+    ]
+};
