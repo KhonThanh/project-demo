@@ -2,7 +2,7 @@ import Image from "next/image";
 import Header from "./header";
 import Footer from "./footer";
 import Script from "next/script";
-import { qualityList } from "./data/index-data";
+import { qualityList, inforNews } from "./data/index-data";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
         </section>
         <section className="bg-[var(--white-color)]">
           <div className="news-container max-w-[1414px] w-[calc(100%-20px)] py-6 mx-auto flex flex-col gap-10">
-            <div className="news-container__title flex justify-between align-bottom">
+            <div className="news-container__title flex justify-between items-end">
               <div className="news-title__header col-60 flex flex-col gap-3">
                 <span className="text-[var(--primary-color)] uppercase text-xs">BẢN ĐỒ NGUỒN CỘI TERROIR</span>
                 <h2 className="capitalize font-bold text-4xl">Ba Miền Thổ Nhưỡng, Ba Tầng Hương Vị Đặc Tuyển</h2>
@@ -59,11 +59,46 @@ export default function Home() {
               </div>
             </div>
             <div className="news-grid__container flex gap-6">
-              <div className="col-3 news-grid__item flex flex-col gap-4 py-3 px-3 bg-[var(--second-white-color)]">
-                
-              </div>
+              {inforNews.map((item, index) => (
+               <div key={index} className="col-3 hover-border-primary relative news-grid__item flex flex-col gap-4 py-3 px-3 bg-[var(--second-white-color)] rounded-[12px]">
+                  <div className="news-grid__avatar aspect-video rounded-[8px] overflow-hidden relative">
+                    <img src={item.avatar} alt={item.title} className="object-cover w-full h-full" />
+                    <span className="text-[var(--white-color)] text-xs uppercase px-2 py-1 font-bold rounded-[8px] bg-[var(--primary-color)] absolute top-[10px] left-[10px] z-10">
+                      {item.altitude}
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-[8px] bg-[var(--white-color)] font-bold capitalize absolute bottom-[10px] right-[10px] z-10">
+                      {item.location}
+                    </span>
+                  </div>
+                  <div className="news-grid__infor flex flex-col gap-2">
+                    <div className="news-grid__header flex justify-between items-end">
+                      <h3 className="text-2xl font-bold">{item.title}</h3>
+                      <p className="uppercase text-[var(--primary-color)] text-xs h-fit font-semibold">
+                        {item.process}
+                      </p>
+                    </div>
+                    <p className="line-clamp-2 text-sm">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-col py-2 px-2 news-grid__tag-container gap-2 bg-[var(--third-white-color)] rounded-[8px]">
+                      <span className="uppercase text-[10px] font-bold text-gray-500">HỒ SƠ NẾM THỬ (CUPPING NOTES)</span>
+                      <div className="news-grid__tag-list flex flex-wrap gap-2">
+                        {item.cuppingNotes.map((note, noteIndex) => (
+                          <p key={noteIndex} className="py-1 px-2 rounded-[4px] text-xs bg-[var(--white-color)]">
+                            {note}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <a href={item.link} aria-label={`xem chi tiết ${item.title}`} className="absolute inset-0 z-20"></a>
+                </div>
+              ))}
             </div>
           </div>
+        </section>
+        <section className="bg-">
+
         </section>
       </main>
       <Footer />

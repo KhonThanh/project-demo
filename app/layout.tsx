@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
+import Script from "next/script";
 import "./css/globals.css";
 import "./css/custom.css";
 import "./css/base.css";
@@ -32,7 +33,8 @@ export default function RootLayout({
     <html lang="vi" className={beVietnamPro.className}>
       <body>
         {children}
-        <script src="/js/frontend.js" defer></script>
+        {/* Dùng strategy afterInteractive để script chạy chuẩn mô hình Next.js */}
+        <Script src="/js/frontend.js" strategy="afterInteractive" />
       </body>
     </html>
   );

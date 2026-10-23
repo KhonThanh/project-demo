@@ -50,7 +50,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="footer-slogan flex items-center gap-2">
-                        <div className="footer-slogan__icon max-w-[-12px] aspect-square overflow-hidden">
+                        <div className="footer-slogan__icon max-w-[12px] aspect-square overflow-hidden">
                             <img src="/img/icon/leaf.svg" alt="chiếc lá" />
                         </div>
                         <p className="uppercase text-[11px]">100% BAO BÌ TÁI SINH HỮU CƠ</p>

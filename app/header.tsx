@@ -4,7 +4,7 @@ export default function Header() {
             <div className="max-w-[1414px] py-2  w-[calc(100%-20px)] mx-auto flex flex-wrap gap-4 justify-between items-center">
                 <div className="aspect-[202/40] max-w-[202px] overflow-hidden relative">
                     <img src="/img/logo/logo-header.svg" alt="logo header" className="object-contain" />
-                    <a href="javascript:void()" className="inset-0 absolute" aria-label="trang chủ"></a>
+                    <a href="#" className="inset-0 absolute" aria-label="trang chủ"></a>
                 </div>
                 <div className="flex gap-6 header-menu__container">
                     <a href="#" className="header-menu__item text-[var(--black-color)] text-[14px]" aria-label="trang chủ">Trang chủ</a>
@@ -26,7 +26,7 @@ export default function Header() {
                         <div className="absolute top-1 right-1 w-[20px] h-[20px] bg-[var(--primary-color)] rounded-full flex items-center justify-center">
                             <span className="text-[var(--black-color)] text-[10px] font-bold leading-none">2</span>
                         </div>
-                        <a href="javascript:void()" className="inset-0 absolute" aria-label="giỏ hàng"></a>
+                        <a href="#" className="inset-0 absolute" aria-label="giỏ hàng"></a>
                     </div>
                     <div className="aspect-square menu-bar__container cursor-pointer bg-[var(--second-white-color)] overflow-hidden relative max-w-[53px] px-4 py-4">
                         <img src="/img/icon/bars.svg" alt="icon bar menu" />
